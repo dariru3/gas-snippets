@@ -37,10 +37,8 @@ function sendEmail() {
       let emailItem1 = dataArray[i][item1Col];
       let emailItem2 = dataArray[i][item2Col];
       let emailItem3 = dataArray[i][item3Col];
-      /* to convert date to text
-      let dateString = emailItem3.toString()
-      dateString = dateString.slice(0,15); //get only the first 15 characters
-      */
+      //convert date to text
+      let dateFormat = Utilities.formateDate(emailItem3, 'Asia/Tokyo', 'mm/dd/yy');
 
       //match above email items to hmtl template body
       templateIndex.emailName = emailName;
