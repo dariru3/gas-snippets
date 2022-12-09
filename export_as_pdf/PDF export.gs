@@ -8,8 +8,10 @@
  * @returns PDF file
  */
 function exportAsPdf(folderId, ssId, sheetId, filenames) {
-  var folder   = DriveApp.getFolderById(folderId);
-  var url    = 'https://docs.google.com/spreadsheets/d/'+ ssId +'/export?';
+  var folder   = DriveApp.getFolderById(folderId); // folder to save PDFs
+  var url    = 'https://docs.google.com/spreadsheets/d/'+ ssId +'/export?'; // source spreadsheet
+  
+  // export options
   var opts   = {
     exportFormat: 'pdf',     // ファイル形式の指定 pdf / csv / xls / xlsx
     format:       'pdf',     // ファイル形式の指定 pdf / csv / xls / xlsx
@@ -36,7 +38,12 @@ function exportAsPdf(folderId, ssId, sheetId, filenames) {
         'Authorization': 'Bearer ' +  token
       }
     });
-  var blob = response.getBlob().setName(filenames + '.pdf');
+  // end of export options
+
+  var blob = response.getBlob().setName(filenames + '.pdf'); // rename PDF file
+
+  //create PDF
   var newPdf = folder.createFile(blob);
   return newPdf;
+  //end of create PDF
 } 
