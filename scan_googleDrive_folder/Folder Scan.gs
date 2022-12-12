@@ -8,7 +8,7 @@ const sh = ss.getSheetByName(sheetName);
  * Function to list file IDs of all files in a Google Drive folder
  * @param folderId {string} ID of Google Drive folder to scan
  */
-function list_all_files(folderId){
+function scanGoogleDriveFolder(folderId){
   //connect to save folder using the folder ID
   const folder = DriveApp.getFolderById(folderId);
   const folderName = DriveApp.getFolderById(folderId).getName()
