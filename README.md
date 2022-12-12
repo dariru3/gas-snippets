@@ -16,3 +16,13 @@ TODO: clean up
 - how to get personal id
 4. Scan Google Drive folder for files (scan_googleDrive_folder)
 5. Google Sheet as Mail Merge (sheetToEmail)
+
+# Post to Google Chat
+How to find chat thread
+1. Use script to initiate thread (leave "thread" variable blank)
+2. View log response
+```
+"thread": {
+    "name": "spaces/AAAAAAAAA/threads/THREAD_ID",
+```
+3. Insert as "thread" variable everything in quotes after `"name":`
