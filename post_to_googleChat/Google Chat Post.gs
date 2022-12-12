@@ -6,7 +6,8 @@
  * @param threadName {string} Optional. Can be any string.
  */
 function postGoogleChat(url, text, threadName) {
-  url = threadName ? url+"&threadKey="+threadName : url;
+  url = threadName ? url+"&threadKey="+threadName : url; //checks for thread name
+  //Google Chat post settings. No need to edit
   const options = {
     "method" : "POST",
     "headers": {
@@ -16,6 +17,6 @@ function postGoogleChat(url, text, threadName) {
       "text": text
     })
   };
-  const response = UrlFetchApp.fetch(url, options);
-  Logger.log(response);
+  const response = UrlFetchApp.fetch(url, options); //post to Google Chat
+  Logger.log(response); //for debugging
 }
