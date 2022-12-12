@@ -18,11 +18,5 @@ TODO: clean up
 5. Google Sheet as Mail Merge (sheetToEmail)
 
 # Post to Google Chat
-How to find chat thread
-1. Use script to initiate thread (leave "thread" variable blank)
-2. View log response
-```
-"thread": {
-    "name": "spaces/AAAAAAAAA/threads/THREAD_ID",
-```
-3. Insert as "thread" variable everything in quotes after `"name":`
+To add a webhook to a chat and how to respond to the same thread
+see this Google help [page](https://developers.google.com/chat/how-tos/webhooks#apps-script).

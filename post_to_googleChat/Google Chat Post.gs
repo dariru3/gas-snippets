@@ -1,24 +1,21 @@
 /**
  * Function to post messages into Google Chat. 
- * Thread ID optional.
+ * Thread name is optional.
  * @param url {string} Google Chat webhook url
- * @param thread {string} Optional. Thread id. Find in log after inital post (see https://qiita.com/ysk1025/items/033857046456ab964537).
  * @param text {string} Message to post
+ * @param threadName {string} Optional. Can be any string.
  */
-function PostGoogleChat(url, thread, text) {  
-  var payload = {
-  "text" : text,
-    "thread": {
-      "name": thread
-    }
-  }
-  var json = JSON.stringify(payload); //エンコード
-  // ポストするためにヘッダーとかボディをまとめて入力する
-  var options = {
+function postGoogleChat(url, text, threadName) {
+  url = threadName ? url+"&threadKey="+threadName : url;
+  const options = {
     "method" : "POST",
-    "contentType" : 'application/json; charset=utf-8',
-    "payload" : json
-  }
-  var response = UrlFetchApp.fetch(url, options); //XMLHttpRequestが使えないのでこっちでポスト
-  Logger.log(response); //Find thread id here
+    "headers": {
+      "Content-Type" : 'application/json; charset=UTF-8'
+    },
+    "payload": JSON.stringify({
+      "text": text
+    })
+  };
+  const response = UrlFetchApp.fetch(url, options);
+  Logger.log(response);
 }
