@@ -12,12 +12,13 @@ Collection of GAS functions for modular use
 2. Anchor link
 
 TODO: clean up
-1. ~~Export Sheet as PDF (export_as_pdf)~~
-2. ~~Google Translate class (google_translate)~~
-3. ~~Post to Google Chat (post_to_googleChat)~~
-4. ~~Scan Google Drive folder for files (scan_googleDrive_folder)~~
-5. Google Sheet as Mail Merge (sheetToEmail)
-- link to variable creater spreadsheet
+
+- [x] Export Sheet as PDF (export_as_pdf)
+- [x] Google Translate class (google_translate)
+- [x] Post to Google Chat (post_to_googleChat)
+- [x] Scan Google Drive folder for files (scan_googleDrive_folder)
+- [ ] Google Sheet as Mail Merge (sheetToEmail)
+- [ ] link to variable creater spreadsheet
 
 ## Post to Google Chat
 To add a webhook to a chat and how to respond to the same thread
