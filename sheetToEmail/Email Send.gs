@@ -1,3 +1,8 @@
+/**
+ * Function to collect data from a Google Sheet
+ * as contents for mail merging.
+ * Requries creating a template in HTML.
+ */
 function sendEmail() {
   //connect to spreadsheet
   const SpreadsheetName = "Sheet1";
@@ -39,7 +44,7 @@ function sendEmail() {
 
     //send email
     GmailApp.sendEmail(emailAddress,subject,htmlBody,options);
-    sheet.getRange(i+1, statusCol+1).setValue("Email sent") //UX: let user know status of email
+    Sheet.getRange(i+1, statusCol+1).setValue("Email sent") //UX: let user know status of email
     console.log("Email to " + emailAddress + " sent." );
   };
 };

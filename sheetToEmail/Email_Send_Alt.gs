@@ -1,6 +1,7 @@
 /**
- * Example to use an Object to save sheet headers
- * and skip having to write extra code
+ * Example of using an Object to save sheet headers
+ * Pro: Save time, write less code
+ * Con: Unable to see Object contents
  */
 function sendEmailAlt(){
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");

@@ -20,7 +20,6 @@ function useGoogleTranslate(sourceHeader, targetHeader) {
       continue
     }
     let temp = LanguageApp.translate(sheetData[i][originalTextCol],'ja','en'); //translate from Japanese (ja) to English (en)
-    console.log('Original: ', sheetData[i][originalTextCol], 'n\Translation: ', temp);
     sheet.getRange(i+1, translatedTextCol+1).setValue(temp);
     temp = '';
   }

@@ -11,12 +11,9 @@ const targetSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
 const targetSheetName = "Sheet1";
 const targetSheet = targetSpreadsheet.getSheetByName(targetSheetName);
 const sheet_values = targetSheet.getDataRange().getValues();
-
 //get 'x' coordinate
 const topHeader_col = sheet_values[0].indexOf(topHeader);
-
-//get 'y' coordinate
-//scan for 'leftHeader' parameter, save row number in 'row'
+//get 'y' coordinate: scan for 'leftHeader' parameter, save row number in 'row'
 let row = 0; // save row value here
 for(let i = 0; i < sheet_values.length; i++){
     for(let j = 0; j < sheet_values[i].length; j++){
@@ -25,7 +22,6 @@ for(let i = 0; i < sheet_values.length; i++){
         }
     }
 }
-
 //paste 'comment' into cell with (topHeader,leftHeader) coordinates
 targetSheet.getRange(row+1, topHeader_col + 1).setValue(comment);
 }

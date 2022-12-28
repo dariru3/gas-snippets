@@ -40,10 +40,9 @@ function exportAsPdf(folderId, ssId, sheetId, filenames) {
     });
   // end of export options
 
-  var blob = response.getBlob().setName(filenames + '.pdf'); // rename PDF file
-
+  // rename PDF file
+  var blob = response.getBlob().setName(filenames + '.pdf'); 
   //create PDF
   var newPdf = folder.createFile(blob);
   return newPdf;
-  //end of create PDF
 } 
