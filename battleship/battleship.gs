@@ -5,27 +5,26 @@
  * @param comment {string} Text to add in (x,y) cell
  * @param sheetName {string} Name of target sheet
  */
-function main(topHeader, leftHeader, comment, sheetName) {
+function main(topHeader, leftHeader, comment) {
 //connect to target spreadsheet
-const targetSpreadsheet_id = "1QLnJggsEnYd-RgcHIwnf4PrsuR6xc-eqFYIVEe6tsME";
-//const targetSpreadsheet = SpreadsheetApp.getActiveSpreadsheet(); //use if script is in the target spreadsheet, remove line above
-const targetSpreadsheet = SpreadsheetApp.openById(targetSpreadsheet_id);
-const targetSheet = targetSpreadsheet.getSheetByName(sheetName);
-
-//get data from target sheet
+const targetSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+const targetSheetName = "Sheet1";
+const targetSheet = targetSpreadsheet.getSheetByName(targetSheetName);
 const sheet_values = targetSheet.getDataRange().getValues();
+
+//get 'x' coordinate
 const topHeader_col = sheet_values[0].indexOf(topHeader);
 
-let row = 0; // save row value here
+//get 'y' coordinate
 //scan for 'leftHeader' parameter, save row number in 'row'
+let row = 0; // save row value here
 for(let i = 0; i < sheet_values.length; i++){
     for(let j = 0; j < sheet_values[i].length; j++){
-    if(sheet_values[i][j] == leftHeader){
-        row = i
-    }
+        if(sheet_values[i][j] == leftHeader){
+            row = i
+        }
     }
 }
-console.log(row);
 
 //paste 'comment' into cell with (topHeader,leftHeader) coordinates
 targetSheet.getRange(row+1, topHeader_col + 1).setValue(comment);
