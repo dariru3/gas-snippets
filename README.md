@@ -6,7 +6,10 @@ Collection of GAS functions for modular use
 3. Post to Google Chat (post_to_googleChat)
 4. Scan Google Drive folder for files (scan_googleDrive_folder)
 5. Google Sheet as Mail Merge (sheetToEmail)
-6. Misc/Helpful Code (scroll down)
+
+# Misc/Helpful Code (scroll down)
+1. Date format
+2. Anchor link
 
 TODO: clean up
 1. ~~Export Sheet as PDF (export_as_pdf)~~
@@ -22,4 +25,11 @@ see this Google help [page](https://developers.google.com/chat/how-tos/webhooks#
 
 ## Misc/Helpful Code
 ### Format dates
-`let dateFormat = Utilities.formateDate(dateVariable, 'Asia/Tokyo', 'mm/dd/yy');`
+```js
+let dateFormat = Utilities.formateDate(dateVariable, 'Asia/Tokyo', 'mm/dd/yy');
+```
+### Create anchor link (for chat, etc)
+```js
+const sheetUrl = "https://google.com";
+const linkToSheet = "<" + sheetUrl + "|リンク>";
+```
