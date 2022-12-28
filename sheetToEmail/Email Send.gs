@@ -7,12 +7,12 @@ function sendEmail() {
   const dataArray = Sheet.getDataRange().getValues();
 
   //match columns with column headers (examples)
-  const emailCol = dataArray[0].indexOf("email");
-  const nameCol = dataArray[0].indexOf("name");
-  const item1Col = dataArray[0].indexOf("item1");
-  const item2Col = dataArray[0].indexOf("item2");
-  const item3Col = dataArray[0].indexOf("item3");
-  const statusCol = dataArray[0].indexOf("status");
+  const emailCol = dataArray[0].indexOf("Email");
+  const nameCol = dataArray[0].indexOf("Name");
+  const item1Col = dataArray[0].indexOf("Item 1");
+  const item2Col = dataArray[0].indexOf("Item 2");
+  const item3Col = dataArray[0].indexOf("Item 3");
+  const statusCol = dataArray[0].indexOf("Status");
 
   //connect html file as email body
   const emailTemplate = "Email Template"; //html filename along with this script
