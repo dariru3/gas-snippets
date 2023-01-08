@@ -10,8 +10,8 @@ function sendEmailAlt(){
     const headersText = sheet.getRange(1,1,1,lastCol).getValues();
   
     const headersObj = {};
-    for (let i = 0; i < headersText.length; i++) {
-        const header = headersText[i];
+    for (let i = 0; i < headersText[0].length; i++) {
+        const header = headersText[0][i];
         headersObj[`${header}_Col`] = data[0].indexOf(header);
     }
 
