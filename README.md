@@ -7,6 +7,7 @@ Collection of GAS functions for modular use
 4. Scan Google Drive folder for files (scan_googleDrive_folder)
 5. Google Sheet as Mail Merge (sheetToEmail)
 6. Find and set cell value with top header, left column ([battleship](https://en.wikipedia.org/wiki/Battleship_(game)))
+7. Show pop-up alert window
 
 # Misc/Helpful Code (scroll down)
 1. Post to Google Chat
