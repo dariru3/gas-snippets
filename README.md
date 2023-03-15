@@ -31,6 +31,7 @@ const linkToSheet = "<" + sheetUrl + "|リンク>";
 
 ## Show toast message
 ```js
+// Show a 3-second popup with the title "Status" and the message "Task started".
 SpreadsheetApp.getActiveSpreadsheet().toast('Task started', 'Status', 3);
 ```
 [source](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet#toastmsg)
