@@ -13,6 +13,7 @@ Collection of GAS functions for modular use
 1. Post to Google Chat
 2. Date format
 3. Anchor link
+4. Show toast message (small, temporary pop-up message)
 
 ## Post to Google Chat
 To add a webhook to a chat and how to respond to the same thread
@@ -27,3 +28,9 @@ let dateFormat = Utilities.formateDate(dateVariable, 'Asia/Tokyo', 'mm/dd/yy');
 const sheetUrl = "https://google.com";
 const linkToSheet = "<" + sheetUrl + "|リンク>";
 ```
+
+## Show toast message
+```js
+SpreadsheetApp.getActiveSpreadsheet().toast('Task started', 'Status', 3);
+```
+[source](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet#toastmsg)
